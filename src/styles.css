@@ -1,13 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background-image: url('/Portfolio-Personal/src/app/ASSETS/FONDO.gif');
-    background-size: cover;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url('assets/fondoGrande.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
+    background-attachment: fixed;
 
     font-family: 'Roboto Mono', monospace;
-    font-weight: 400; /* Regular por defecto */
+    font-weight: 400;
     margin: 0;
     padding: 0;
+    padding-top: 85px;
+    box-sizing: border-box;
+}
+
+.button-primary, .button-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 50px;
+    border: 3px solid black;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button-secondary {
+    color: black;
+    background-color: white;
+}
+.button-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.button-primary {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    background-color: black;
+}
+.button-primary:hover {
+    background-color: #222;
 }
