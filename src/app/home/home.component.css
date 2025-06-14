@@ -1,11 +1,13 @@
 .home-container {
-    width: 70%;
+    width: 60%;
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 40px 20px;
     align-items: center;
+    margin-top: 70px;
+    position: relative;
 }
 
 .title, .subtitle, .text-box {
@@ -15,16 +17,14 @@
 }
 
 .title {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
-    margin-bottom: -30px;
-    margin-top: 80px;
+    margin-bottom: -50px;
 }
 
 .subtitle {
-    font-size: 62px;
+    font-size: 54px;
     font-weight: 700;
-    margin-bottom: 20px;
 }
 
 .text-box-wrapper {
@@ -37,10 +37,10 @@
     border: 10px solid black;
     padding: 20px;
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     background-color: white;
-    margin-bottom: 50px;
+    margin-bottom: 41px;
     position: relative;
     z-index: 1;
 }
@@ -49,10 +49,11 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 53%;
     height: auto;
     object-fit: cover;
     z-index: 2;
-    transform: translateY(-10.5%);
+    bottom: 50px;
 }
 
 .button-container {
