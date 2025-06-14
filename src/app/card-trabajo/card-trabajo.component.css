@@ -1,0 +1,34 @@
+.card-trabajo {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-imagen {
+    width: 330px;
+    height: 300px;
+    border: 5px solid black;
+    background-size: cover;
+    background-position: center;
+}
+
+.ver-detalles {
+    width: 330px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+}
+
+.ver-detalles::after {
+    content: '';
+    display: inline-block;
+    width: 20px; /* espacio deseado */
+}
