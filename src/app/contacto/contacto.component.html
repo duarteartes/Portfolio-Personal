@@ -1,1 +1,46 @@
-<p>contacto works!</p>
+<div class="contact-container">
+    <div class="contact-box">
+        <h3 class="contact-title">¡PONTE EN CONTACTO!</h3>
+        <form (submit)="onSubmit($event)">
+            <input
+                type="text"
+                name="nombre"
+                [(ngModel)]="formData.nombre"
+                placeholder="NOMBRE Y APELLIDOS"
+                class="input-contact"
+            />
+            <p *ngIf="errors.nombre" class="error-campo">No puedes dejar en blanco este campo</p>
+            <input
+                type="tel"
+                name="telefono"
+                [(ngModel)]="formData.telefono"
+                placeholder="TELÉFONO"
+                class="input-contact"
+            />
+            <p *ngIf="errors.telefono" class="error-campo">No puedes dejar en blanco este campo</p>
+            <input
+                type="email"
+                name="email"
+                [(ngModel)]="formData.email"
+                placeholder="CORREO ELECTRÓNICO"
+                class="input-contact"
+            />
+            <p *ngIf="errors.email" class="error-campo">No puedes dejar en blanco este campo</p>
+            <textarea
+                name="mensaje"
+                [(ngModel)]="formData.mensaje"
+                placeholder="INTRODUCE UN MENSAJE"
+                class="input-contact"
+            ></textarea>
+            <p *ngIf="errors.mensaje" class="error-campo">No puedes dejar en blanco este campo</p>
+
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="button-container button-right">
+                <button class="button-primary" type="submit">ENVIAR</button>
+            </div>
+        </form>
+
+        <p *ngIf="mensajeEnviado" class="mensaje-exito">¡Mensaje enviado correctamente!</p>
+    </div>
+</div>
