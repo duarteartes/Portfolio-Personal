@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .home-container {
     width: 60%;
     max-width: 1170px;
@@ -47,17 +57,90 @@
 
 .foto-personal {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     right: 0;
     width: 53%;
     height: auto;
     object-fit: cover;
     z-index: 2;
-    bottom: 50px;
 }
 
 .button-container {
     display: flex;
     gap: 20px;
     justify-content: center;
+}
+
+/*-------------------- TABLET --------------------*/
+
+@media (max-width: 1024px) {
+    .home-container {
+        width: 80%;
+    }
+    .subtitle {
+        font-size: 42px;
+    }
+    .foto-personal {
+        width: 40%;
+        bottom: 9px;
+        right: 30px;
+    }
+    .text-box {
+        font-size: 16px;
+        width: 90%;
+        margin: 0 auto 41px auto;
+    }
+    .button-container {
+        margin-top: 40px;
+    }
+}
+
+/*-------------------- MOVIL --------------------*/
+
+@media (max-width: 768px) {
+    .home-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+        padding-bottom: 350px;
+        position: relative;
+    }
+    .title {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .subtitle {
+        font-size: 30px;
+        text-align: center;
+    }
+    .text-box-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+    }
+    .text-box {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        order: 2;
+    }
+    .foto-personal {
+        position: absolute;
+        width: 80%;
+        max-width: 100%;
+        bottom: 0;
+        margin-top: 0;
+        order: 3;
+    }
 }

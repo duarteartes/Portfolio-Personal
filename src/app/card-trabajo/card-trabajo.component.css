@@ -13,6 +13,13 @@
     background-position: center;
 }
 
+.card-imagen img {
+  width: 100%;         /* que ocupe todo el ancho del contenedor */
+  height: 100%;        /* que ocupe toda la altura del contenedor */
+  object-fit: cover;   /* mantiene proporción y recorta lo que no cabe */
+  display: block;      /* para evitar espacios en línea debajo de la imagen */
+}
+
 .ver-detalles {
     width: 330px;
     height: 50px;

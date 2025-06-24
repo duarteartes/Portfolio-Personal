@@ -1,1 +1,24 @@
-<p>galeria works!</p>
+<div class="popup-container" (click)="cerrarGaleria()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <div class="close-button-container" (click)="cerrarGaleria()">
+            <button class="close-button" aria-label="Cerrar Galería" type="button">✖</button>
+        </div>
+
+        <div class="imagen-grande-container">
+            <button class="arrow-button" (click)="anterior()" [disabled]="imagenActualIndex === 0">&lt;</button>
+            <img [src]="imagenes[imagenActualIndex]" alt="Imágenes de la galería" class="imagen-grande"/>
+            <button class="arrow-button" (click)="siguiente()" [disabled]="imagenActualIndex === imagenes.length -1">&gt;</button>
+        </div>
+
+        <div class="miniaturas-container">
+            <img
+                *ngFor="let imagen of imagenes; let i = index"
+                [src]="imagen"
+                alt="Miniatura"
+                (click)="seleccionarImagen(i)"
+                [class.seleccionada]="i === imagenActualIndex"
+            />
+        </div>
+
+    </div>
+</div>

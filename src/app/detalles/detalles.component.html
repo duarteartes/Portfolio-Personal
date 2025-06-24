@@ -1,1 +1,17 @@
-<p>detalles works!</p>
+<div class="detalles-container" *ngIf="trabajo">
+    <div class="titulo">{{ trabajo.titulo }}</div>
+    <div class="contenido">
+        <div class="izquierda">
+            <img [src]="trabajo.imagenPrincipal" [alt]="trabajo.titulo" class="imagen-principal" />
+            <button class="button-secondary" (click)="mostrarGaleria()">Galería</button>
+        </div>
+        <div class="derecha">
+            <div class="descripcion" [innerHTML]="trabajo.descripcion | safeHtml">
+            </div>
+        </div>
+    </div>
+</div>
+<app-galeria *ngIf="galeriaVisible && trabajo?.galeria" [imagenes]="trabajo?.galeria || []" (cerrar)="ocultarGaleria()"></app-galeria>
+<div *ngIf="!trabajo">
+    <p>Proyecto no encontrado.</p>
+</div>
