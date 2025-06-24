@@ -1,12 +1,20 @@
 <header class="header">
     <nav class="nav">
-        <div class="nav-left">
-            <button routerLink="/">Home</button>
-            <button routerLink="/sobre-mi">Sobre mí</button>
-            <button routerLink="/portfolio">Portfolio</button>
+
+        <div class="hamburguer" (click)="toggleMenu()">
+            <span class="material-icons">menu</span>
         </div>
-        <div class="nav-right">
-            <button routerLink="/contacto">Contacto</button>
+
+        <div class="nav-links" [class.open]="isMenuOpen">
+            <div class="nav-left">
+                <button routerLink="/">Home</button>
+                <button routerLink="/sobre-mi">Sobre mí</button>
+                <button routerLink="/portfolio">Portfolio</button>
+            </div>
+            <div class="nav-right">
+                <button routerLink="/contacto">Contacto</button>
+            </div>
         </div>
+
     </nav>
 </header>

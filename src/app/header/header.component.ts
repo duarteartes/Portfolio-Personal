@@ -10,4 +10,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
 
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

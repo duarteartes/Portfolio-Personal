@@ -7,6 +7,7 @@
     align-items: center;
     background: white;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .nav {
@@ -14,6 +15,14 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .nav-left, .nav-right {
@@ -35,12 +44,37 @@ button {
     }
 }
 
-@media (max-width: 600px) {
-    .nav {
+/*-------------------- HAMBURGUESA OCULTA EN PC ---------------------*/
+
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.material-icons {
+    font-size: 32px;
+}
+
+/*-------------------- MOVIL/TABLET --------------------*/
+
+@media (max-width: 1024px) {
+    .hamburguer {
+        display: block;
+    }
+    .nav-links {
+        display: none;
         flex-direction: column;
         align-items: center;
-        height: auto;
-        padding: 10px 0;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-links.open {
+        display: flex;
     }
     .nav-left, .nav-right {
         flex-direction: column;
