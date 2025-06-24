@@ -107,3 +107,78 @@
 .stars[data-rating="3"] { --rating: 3; }
 .stars[data-rating="2"] { --rating: 2; }
 .stars[data-rating="1"] { --rating: 1; }
+
+/*-------------------- TABLET --------------------*/
+
+@media (max-width: 1024px) {
+    .about-container{
+        width: 80%;
+    }
+    .box {
+        padding: 0 25px 15px 25px;
+    }
+    .box-title {
+        font-size: 26px;
+    }
+    .education-text {
+        font-size: 14px;
+    }
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .button-cv {
+        width: 300px;
+    }
+}
+
+/*-------------------- MOVIL --------------------*/
+
+@media (max-width: 768px) {
+    .about-container{
+        width: 90%;
+    }
+    .box {
+        padding: 0 15px 15px 15px;
+    }
+    .box-title {
+        font-size: 22px;
+        text-align: center;
+    }
+    .edu-center {
+        font-size: 15px;
+    }
+    .education-text {
+        font-size: 13px;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .tech-item {
+        font-size: 12px;
+    }
+    .button-right {
+        justify-content: center;
+    }
+    .button-cv {
+        width: 250px;
+    }
+    .softskills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    .softskills-column {
+        width: 100%;
+        display: contents;
+    }
+    .softskills-item {
+        width: 100%;
+        padding-left: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+    .softskills-item::before{
+        display: none;
+    }
+}
