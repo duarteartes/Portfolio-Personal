@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrabajosService, Trabajo } from '../services/trabajos.service';
 import { CommonModule } from '@angular/common';
 import { SafeHtmlPipe } from '../pipes/safe-html.pipe';
@@ -19,7 +19,8 @@ export class DetallesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private trabajosService: TrabajosService
+    private trabajosService: TrabajosService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -38,5 +39,9 @@ export class DetallesComponent implements OnInit {
 
   ocultarGaleria() {
     this.galeriaVisible = false;
+  }
+
+  volverAlPortfolio() {
+    this.router.navigate(['/portfolio']);
   }
 }

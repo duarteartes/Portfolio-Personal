@@ -56,6 +56,11 @@
     flex: 1;
 }
 
+.button-primary {
+    display: block;
+    margin: 20px auto 30px auto;
+}
+
 .button-secondary {
     cursor: pointer;
     align-self: flex-end;

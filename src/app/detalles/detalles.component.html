@@ -11,6 +11,7 @@
         </div>
     </div>
 </div>
+<button class="button-primary" (click)="volverAlPortfolio()">Volver al Portfolio</button>
 <app-galeria *ngIf="galeriaVisible && trabajo?.galeria" [imagenes]="trabajo?.galeria || []" (cerrar)="ocultarGaleria()"></app-galeria>
 <div *ngIf="!trabajo">
     <p>Proyecto no encontrado.</p>
