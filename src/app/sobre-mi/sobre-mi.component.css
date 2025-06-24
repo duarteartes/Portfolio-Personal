@@ -138,6 +138,7 @@
         width: 90%;
     }
     .box {
+        border: 7px solid black;
         padding: 0 15px 15px 15px;
     }
     .box-title {
@@ -155,6 +156,15 @@
     }
     .tech-item {
         font-size: 12px;
+    }
+    .stars {
+        font-size: 18px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+    .stars::before {
+        font-size: 18px;
+        letter-spacing: 1px;
     }
     .button-right {
         justify-content: center;

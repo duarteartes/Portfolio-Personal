@@ -53,3 +53,64 @@
     font-size: 12px;
     margin: 0 0 15px 5px;
 }
+
+/*-------------------- TABLET --------------------*/
+
+@media (max-width: 1024px) {
+    .contact-container {
+        width: 80%;
+        margin-top: 40px;
+    }
+    .contact-title {
+        font-size: 26px;
+        text-align: center;
+    }
+    .input-contact {
+        padding: 8px;
+        margin-bottom: 12px;
+        border-width: 4px;
+    }
+    .button-container   {
+        margin-top: 25px;
+    }
+}
+
+/*-------------------- MOVIL --------------------*/
+
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%;
+        margin-top: 30px;
+    }
+    .contact-box {
+        border-width: 5px;
+        padding: 15px;
+    }
+    .contact-title {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .input-contact {
+        padding: 8px;
+        margin-bottom: 10px;
+        border-width: 2px;
+        font-size: 14px;
+    }
+    .button-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .button-primary {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+    .mensaje-exito {
+        font-size: 14px;
+    }
+    .error-campo {
+        font-size: 11px;
+        margin: 0 0 10px 3px;
+    }
+}
