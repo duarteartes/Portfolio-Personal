@@ -10,3 +10,9 @@ CREATE TABLE IF NOT EXISTS trabajos (
     galeria TEXT,
     categoria VARCHAR(100)
 );
+
+CREATE TABLE IF NOT EXISTS admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL
+);

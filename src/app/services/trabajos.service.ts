@@ -17,7 +17,7 @@ export interface Trabajo {
 
 export class TrabajosService {
 
-  private apiUrl = 'http://localhost:3000/api/trabajos'; // Asegúrate de que coincide con tu backend
+  private apiUrl = 'http://localhost:3000/api/trabajos';
 
   constructor(private http: HttpClient) {}
 

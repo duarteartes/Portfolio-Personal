@@ -1,4 +1,4 @@
-.contact-container {
+.login-container {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -7,21 +7,21 @@
     margin-top: 50px;
 }
 
-.contact-box {
+.login-box {
     border: 10px solid black;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
-.contact-title {
+.login-title {
     font-weight: 700;
     font-size: 30px;
     margin-bottom: 30px;
     text-align: left;
 }
 
-.input-contact {
+.input-login {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -30,7 +30,7 @@
     color: black;
 }
 
-.input-contact::placeholder {
+.input-login::placeholder {
     color: gray;
 }
 
@@ -39,38 +39,33 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-}
-
-.mensaje-exito {
-    margin-top: 20px;
-    color: green;
-    font-weight: bold;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .error-campo {
     color: red;
     font-size: 12px;
     margin: 0 0 15px 5px;
+    text-align: left;
 }
 
 /*-------------------- TABLET --------------------*/
 
 @media (max-width: 1024px) {
-    .contact-container {
+    .login-container {
         width: 80%;
         margin-top: 40px;
     }
-    .contact-title {
+    .login-title {
         font-size: 26px;
         text-align: center;
     }
-    .input-contact {
+    .input-login {
         padding: 8px;
         margin-bottom: 12px;
         border-width: 4px;
     }
-    .button-container   {
+    .button-container {
         margin-top: 25px;
     }
 }
@@ -78,20 +73,20 @@
 /*-------------------- MOVIL --------------------*/
 
 @media (max-width: 768px) {
-    .contact-container {
+    .login-container {
         width: 90%;
         margin-top: 30px;
     }
-    .contact-box {
-        border-width: 5px;
+    .login-box {
+        border-width: 6px;
         padding: 15px;
     }
-    .contact-title {
+    .login-title {
         font-size: 22px;
         text-align: center;
         margin-bottom: 20px;
     }
-    .input-contact {
+    .input-login {
         padding: 8px;
         margin-bottom: 10px;
         border-width: 2px;
@@ -101,13 +96,10 @@
         justify-content: center;
         margin-top: 20px;
     }
-    .button-primary {
+    .button-secondary {
         width: 100%;
         font-size: 16px;
         padding: 10px;
-    }
-    .mensaje-exito {
-        font-size: 14px;
     }
     .error-campo {
         font-size: 11px;

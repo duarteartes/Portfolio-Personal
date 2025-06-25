@@ -1,0 +1,23 @@
+<div class="login-container">
+    <div class="login-box">
+        <h3 class="login-title">INICIA SESIÓN</h3>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <input id="usuario" type="text" formControlName="usuario" placeholder="USUARIO" class="input-login"/>
+            <p *ngIf="form.get('usuario')?.invalid && form.get('usuario')?.touched" class="error-campo">
+                El usuario es obligatorio
+            </p>
+
+            <input id="contrasena" type="password" formControlName="contrasena" placeholder="CONTRASEÑA" class="input-login"/>
+            <p *ngIf="form.get('contrasena')?.invalid && form.get('contrasena')?.touched" class="error-campo">
+                La contraseña es obligatoria
+            </p>
+
+            <div class="button-container">
+                <button type="submit" class="button-secondary">ENTRAR</button>
+            </div>
+
+            <p *ngIf="error" class="error-campo error-login" style="text-align: center;">{{ error }}</p>
+
+        </form>
+    </div>
+</div>

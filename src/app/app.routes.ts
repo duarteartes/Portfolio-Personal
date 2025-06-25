@@ -4,6 +4,7 @@ import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DetallesComponent } from './detalles/detalles.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'portfolio', component: PortfolioComponent },
     { path: 'contacto', component: ContactoComponent },
     { path: 'portfolio/:id', component: DetallesComponent },
+    { path: 'login', component: LoginComponent },
     { path: '**', component: HomeComponent }
 ];
