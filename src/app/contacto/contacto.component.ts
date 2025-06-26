@@ -28,7 +28,7 @@ export class ContactoComponent {
   onSubmit(event: Event) {
     event.preventDefault();
 
-    // Resetear errores
+    // Validar campos
     this.errors = {
       nombre: !this.formData.nombre.trim(),
       telefono: !this.formData.telefono.trim(),
@@ -36,21 +36,16 @@ export class ContactoComponent {
       mensaje: !this.formData.mensaje.trim()
     };
 
-    // Si hay algún error, no enviar
     const hayErrores = Object.values(this.errors).some(error => error);
     if (hayErrores) return;
 
-    // Enviar formulario
-    const formDataToSend = new FormData();
-    formDataToSend.append('nombre', this.formData.nombre);
-    formDataToSend.append('telefono', this.formData.telefono);
-    formDataToSend.append('email', this.formData.email);
-    formDataToSend.append('mensaje', this.formData.mensaje);
-    formDataToSend.append('_captcha', 'false');
-
-    fetch('https://formsubmit.co/duarte.eartes@gmail.com', {
+    // Enviar al backend
+    fetch('http://localhost:3000/api/contact', {
       method: 'POST',
-      body: formDataToSend
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.formData)
     })
     .then(response => {
       if (response.ok) {
