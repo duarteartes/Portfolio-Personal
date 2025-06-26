@@ -30,7 +30,7 @@ export class LoginComponent {
     if (this.form.valid) {
       const {usuario, contrasena} = this.form.value;
       this.loginService.login(usuario!, contrasena!).subscribe({
-        next: () => this.router.navigate(['/portfolio']),
+        next: () => this.router.navigate(['/admin']),
         error: (err) => this.error = err. error?.error || 'Error desconocido'
       });
     }

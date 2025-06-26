@@ -1,0 +1,13 @@
+<div class="admin-container">
+    <h2>PANEL DE ADMINISTRACIÓN</h2>
+    <app-formulario-nuevo></app-formulario-nuevo>
+    <h3>LISTADO DE TRABAJOS</h3>
+    <div class="trabajos-lista">
+        <div *ngFor="let trabajo of trabajos" class="trabajo-item">
+            <app-card-trabajo [trabajo]="trabajo"></app-card-trabajo>
+            <div class="button-container">
+                <button class="button-eliminar" (click)="eliminarTrabajo(trabajo.id)">ELIMINAR</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -34,4 +34,18 @@ export class TrabajosService {
     );
   }
 
+  crearTrabajo(data: {
+    titulo: string;
+    descripcion: string;
+    imagenPrincipal: string;
+    galeria: string[];
+    categoria: string;
+  }): Observable<any> {
+    return this.http.post(this.apiUrl, data);
+  }
+
+  eliminarTrabajo(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }

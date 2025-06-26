@@ -1,0 +1,56 @@
+<div class="formulario-container" [class.expandido]="expandido">
+    <div class="formulario-header">
+        <h3 class="formulario-title">CREAR NUEVO PROYECTO</h3>
+        <button class="toggle-btn" (click)="toggleExpand()">
+            {{ expandido ? '-' : '+' }}
+        </button>
+    </div>
+
+    <div class="formulario-content" *ngIf="expandido">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <input type="text" formControlName="titulo" placeholder="TÍTULO DEL PROYECTO" class="input-formulario"/>
+            <div class="error" *ngIf="form.get('titulo')?.touched && form.get('titulo')?.invalid">
+                El título es obligatorio.
+            </div>
+
+            <div class="categoria-group">
+                <label class="categoria-label">CATEGORÍA:</label>
+                <div class="categoria-options">
+                    <label class="categoria-option">
+                        <input type="radio" formControlName="categoria" value="grafico" />GRÁFICO
+                    </label>
+                    <label class="categoria-option">
+                        <input type="radio" formControlName="categoria" value="daw" />DAW
+                    </label>
+                    <label class="categoria-option">
+                        <input type="radio" formControlName="categoria" value="uiux" />UI/UX
+                    </label>
+                </div>
+                <div class="error" *ngIf="form.get('categoria')?.touched && form.get('categoria')?.invalid">
+                    La categoría es obligatoria.
+                </div>
+            </div>
+
+            <textarea formControlName="descripcion" placeholder="DESCRIPCIÓN DEL PROYECTO" class="input-formulario"></textarea>
+            <div class="error" *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.invalid">
+                La descripción es obligatoria.
+            </div>
+
+            <input type="text" formControlName="imagenPrincipal" placeholder="RUTA IMAGEN PRINCIPAL" class="input-formulario" />
+            <div class="error" *ngIf="form.get('imagenPrincipal')?.touched && form.get('imagenPrincipal')?.invalid">
+                La imagen principal es obligatoria.
+            </div>
+
+            <textarea formControlName="galeria" placeholder="RUTAS GALERÍA" class="input-formulario"></textarea>
+            <div class="error" *ngIf="form.get('galeria')?.touched && form.get('galeria')?.invalid">
+                La galería es obligatoria.
+            </div>
+
+            <div class="button-container button-right">
+                <button class="button-primary" type="submit">CREAR PROYECTO</button>
+            </div>
+
+        </form>
+    </div>
+</div>

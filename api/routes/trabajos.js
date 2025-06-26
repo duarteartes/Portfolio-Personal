@@ -33,9 +33,10 @@ router.get('/categoria/:categoria', (req, res) => {
 
 // Insertar un nuevo trabajo
 router.post('/', (req, res) => {
-    const { titulo, descripcion, imagen_principal, galeria, categoria } = req.body;
-    const sql = 'INSERT INTO trabajos (titulo, descripcion, imagen_principal, galeria, categoria) VALUES (?, ?, ?, ?, ?)';
-    db.query(sql, [titulo, descripcion, imagen_principal, JSON.stringify(galeria), categoria], (err, result) => {
+    console.log('REQ BODY:', req.body);
+    const { titulo, descripcion, imagenPrincipal, galeria, categoria } = req.body;
+    const sql = 'INSERT INTO trabajos (titulo, descripcion, imagenPrincipal, galeria, categoria) VALUES (?, ?, ?, ?, ?)';
+    db.query(sql, [titulo, descripcion, imagenPrincipal, JSON.stringify(galeria), categoria], (err, result) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ id: result.insertId });
     });

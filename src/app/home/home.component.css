@@ -59,7 +59,7 @@ html, body {
     position: absolute;
     bottom: 50px;
     right: 0;
-    width: 53%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     z-index: 2;

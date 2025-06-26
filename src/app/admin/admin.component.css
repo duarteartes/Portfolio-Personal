@@ -1,0 +1,75 @@
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px 0 20px 0;
+    text-align: center;
+
+}
+
+.trabajos-lista {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.trabajo-item {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+.button-eliminar {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 5px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-eliminar:hover {
+    background-color: black;
+    color: white;
+}
+
+
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .trabajos-lista {
+        width: 90%;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 25px;
+    }
+    .trabajos-lista {
+        width: 90%;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
