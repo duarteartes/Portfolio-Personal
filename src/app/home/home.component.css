@@ -20,21 +20,25 @@ html, body {
     position: relative;
 }
 
-.title, .subtitle, .text-box {
+.title, .subtitle {
     width: 100%;
     margin-left: 0;
     text-align: left;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 .title {
     font-size: 35px;
     font-weight: 700;
     margin-bottom: -50px;
+    animation-delay: 0s;
 }
 
 .subtitle {
     font-size: 54px;
     font-weight: 700;
+    animation-delay: 0.3s;
 }
 
 .text-box-wrapper {
@@ -69,6 +73,26 @@ html, body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+}
+
+/*-------------------- ANIMACIONES --------------------*/
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100px); opacity: 0;}
+    to { transform: translateX(0); opacity: 1;}
+}
+@keyframes slideInRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+.animate-slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
 }
 
 /*-------------------- TABLET --------------------*/
