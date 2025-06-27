@@ -15,7 +15,6 @@ export class PortfolioComponent implements OnInit {
   trabajosGrafico: Trabajo[] = [];
   trabajosDaw: Trabajo[] = [];
 
-
   constructor(private trabajosService: TrabajosService) {}
 
   ngOnInit() {

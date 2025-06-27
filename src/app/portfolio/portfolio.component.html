@@ -2,16 +2,18 @@
     <h2>DISEÑO GRÁFICO</h2>
     <div class="categoria-container">
         <app-card-trabajo
-            *ngFor="let trabajo of trabajosGrafico"
-            [trabajo]="trabajo">
+            *ngFor="let trabajo of trabajosGrafico; index as i"
+            [trabajo]="trabajo"
+            [index]="i">
         </app-card-trabajo>
     </div>
 
     <h2>DESARROLLO DE APLICACIONES WEB</h2>
     <div class="categoria-container">
         <app-card-trabajo
-            *ngFor="let trabajo of trabajosDaw"
-            [trabajo]="trabajo">
+            *ngFor="let trabajo of trabajosDaw; index as i"
+            [trabajo]="trabajo"
+            [index]="i">
         </app-card-trabajo>
     </div>
 </div>
