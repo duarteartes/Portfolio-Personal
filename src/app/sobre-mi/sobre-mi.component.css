@@ -5,12 +5,20 @@
     flex-direction: column;
 }
 
+/* Fade-in + Parallax básico */
 .box {
     border: 10px solid black;
     padding: 0 35px 15px 35px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
     background-color: white;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.box.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .box-title {
@@ -28,22 +36,53 @@
 .edu-title {
     font-weight: 700;
 }
+
 .edu-center {
     font-weight: 700;
     font-size: 19px;
 }
 
+/* Botón descarga */
 .button-right {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px 0 50px 0;
 }
+
 .button-cv {
     width: 350px;
 }
 
+/* Contenedor del botón está por defecto fuera del viewport a la derecha */
+.button-container {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Cuando está activo, entra desde la derecha */
+.button-container.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.button-container.animate-out {
+    opacity: 0.5;
+    transform: translateX(100%);
+}
+.button-container.button-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.button-container.button-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Soft Skills */
 .softskills-container {
     display: flex;
     justify-content: space-between;
@@ -60,7 +99,21 @@
     position: relative;
     padding-left: 20px;
     margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+.softskills-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.softskills-item.animate-out {
+    opacity: 0.5;
+    transform: translateY(-20px);
+}
+
 .softskills-item::before {
     content: '';
     position: absolute;
@@ -69,8 +122,10 @@
     width: 8px;
     height: 8px;
     background-color: black;
+    border-radius: 50%;
 }
 
+/* Estrellas de nivel */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -90,6 +145,19 @@
     color: black;
     line-height: 0.7;
     margin-bottom: 8px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stars.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.stars.animate-out {
+    opacity: 0.5;
+    transform: scale(0.6);
 }
 
 .stars::before {
@@ -109,9 +177,8 @@
 .stars[data-rating="1"] { --rating: 1; }
 
 /*-------------------- TABLET --------------------*/
-
 @media (max-width: 1024px) {
-    .about-container{
+    .about-container {
         width: 80%;
     }
     .box {
@@ -126,6 +193,28 @@
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .softskills-container {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .softskills-column {
+        display: block;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 300px;
+    }
+    .softskills-item {
+        display: block;
+        margin-bottom: 10px;
+        padding-left: 0;
+        text-align: center;
+        position: static;
+    }
+    .softskills-item::before {
+        display: none;
+    }
     .button-cv {
         width: 300px;
     }
@@ -134,7 +223,7 @@
 /*-------------------- MOVIL --------------------*/
 
 @media (max-width: 768px) {
-    .about-container{
+    .about-container {
         width: 90%;
     }
     .box {
@@ -168,27 +257,5 @@
     }
     .button-right {
         justify-content: center;
-    }
-    .button-cv {
-        width: 250px;
-    }
-    .softskills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0;
-    }
-    .softskills-column {
-        width: 100%;
-        display: contents;
-    }
-    .softskills-item {
-        width: 100%;
-        padding-left: 0;
-        font-size: 13px;
-        text-align: center;
-    }
-    .softskills-item::before{
-        display: none;
     }
 }
