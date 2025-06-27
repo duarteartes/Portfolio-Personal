@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormularioNuevoComponent } from '../formulario-nuevo/formulario-nuevo.component';
 import { TrabajosService, Trabajo } from '../services/trabajos.service';
 import { CardTrabajoComponent } from '../card-trabajo/card-trabajo.component';
+import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -14,7 +16,7 @@ import { CardTrabajoComponent } from '../card-trabajo/card-trabajo.component';
 export class AdminComponent implements OnInit{
   trabajos: Trabajo[] = [];
 
-  constructor(private trabajosService: TrabajosService) {}
+  constructor(private trabajosService: TrabajosService, private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {
     this.cargarTrabajos();
@@ -32,5 +34,10 @@ export class AdminComponent implements OnInit{
         this.trabajos = this.trabajos.filter(t => t.id !== id);
       });
     }
+  }
+
+  cerrarSesion(): void {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 }

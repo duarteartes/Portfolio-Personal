@@ -13,9 +13,17 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(usuario: string, contrasena: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { usuario, contrasena });
+    return new Observable(observer => {
+      this.http.post(`${this.apiUrl}/login`, { usuario, contrasena }).subscribe({
+        next: (response: any) => {
+          localStorage.setItem('token', response.token);
+          observer.next(response);
+        },
+        error: (err) => observer.error(err)
+      });
+    });
   }
-  logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/logout`, {});
+  logout(): void {
+    localStorage.removeItem('token');
   }
 }
