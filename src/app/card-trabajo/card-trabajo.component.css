@@ -1,13 +1,18 @@
+/* card-trabajo.component.css */
+
 .card-trabajo {
   width: 330px;
+  max-width: 100%; /* No dejar que sobrepase el contenedor */
   display: flex;
   flex-direction: column;
   align-items: center;
 
   /* Animación: estado inicial */
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(50px); /* menos desplazamiento para evitar scroll */
   transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
+  box-sizing: border-box; /* para que bordes no afecten ancho total */
 }
 
 .card-trabajo.visible {
@@ -17,10 +22,12 @@
 
 .card-imagen {
   width: 330px;
+  max-width: 100%;
   height: 300px;
   border: 5px solid black;
   background-size: cover;
   background-position: center;
+  box-sizing: border-box;
 }
 
 .card-imagen img {
@@ -32,6 +39,7 @@
 
 .ver-detalles {
   width: 330px;
+  max-width: 100%;
   height: 50px;
   background-color: black;
   color: white;
@@ -42,10 +50,26 @@
   justify-content: flex-end;
   align-items: center;
   padding-right: 0;
+  box-sizing: border-box;
 }
 
 .ver-detalles::after {
   content: '';
   display: inline-block;
   width: 20px;
+}
+
+/* Ajuste para móvil - cards más estrechas y sin scroll */
+
+@media (max-width: 768px) {
+  .card-trabajo {
+    width: 90vw; /* ancho responsivo */
+    transform: translateX(0); /* sin animación lateral para no generar scroll */
+  }
+  .card-trabajo.visible {
+    transform: translateX(0);
+  }
+  .card-imagen, .ver-detalles {
+    width: 100%;
+  }
 }
