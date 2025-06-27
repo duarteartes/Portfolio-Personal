@@ -102,3 +102,19 @@
 .miniaturas-container img.seleccionada {
     border: 2px solid black;
 }
+
+/* Para tablet y móvil (max-width 1024px) */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 95%;
+        width: 95%;
+    }
+}
+
+/* Para móvil más pequeño (max-width 768px) */
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 80%;
+        width: 90%;
+    }
+}

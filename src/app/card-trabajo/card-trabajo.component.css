@@ -1,75 +1,71 @@
-/* card-trabajo.component.css */
-
 .card-trabajo {
-  width: 330px;
-  max-width: 100%; /* No dejar que sobrepase el contenedor */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* Animación: estado inicial */
-  opacity: 0;
-  transform: translateX(50px); /* menos desplazamiento para evitar scroll */
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  will-change: transform, opacity;
-  box-sizing: border-box; /* para que bordes no afecten ancho total */
+    width: 330px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    will-change: transform, opacity;
+    box-sizing: border-box;
 }
 
 .card-trabajo.visible {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .card-imagen {
-  width: 330px;
-  max-width: 100%;
-  height: 300px;
-  border: 5px solid black;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
+    width: 330px;
+    max-width: 100%;
+    height: 300px;
+    border: 5px solid black;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
 }
 
 .card-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .ver-detalles {
-  width: 330px;
-  max-width: 100%;
-  height: 50px;
-  background-color: black;
-  color: white;
-  border: 5px solid black;
-  cursor: pointer;
-  font-weight: bold;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 0;
-  box-sizing: border-box;
+    width: 330px;
+    max-width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+    box-sizing: border-box;
 }
 
 .ver-detalles::after {
-  content: '';
-  display: inline-block;
-  width: 20px;
+    content: '';
+    display: inline-block;
+    width: 20px;
 }
 
-/* Ajuste para móvil - cards más estrechas y sin scroll */
+/*-------------------- MOVIL --------------------*/
 
 @media (max-width: 768px) {
-  .card-trabajo {
-    width: 90vw; /* ancho responsivo */
-    transform: translateX(0); /* sin animación lateral para no generar scroll */
-  }
-  .card-trabajo.visible {
-    transform: translateX(0);
-  }
-  .card-imagen, .ver-detalles {
-    width: 100%;
-  }
+    .card-trabajo {
+        width: 90vw;
+        transform: translateX(0);
+    }
+    .card-trabajo.visible {
+        transform: translateX(0);
+    }
+    .card-imagen, .ver-detalles {
+        width: 100%;
+    }
 }
