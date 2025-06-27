@@ -17,7 +17,7 @@ export interface Trabajo {
 
 export class TrabajosService {
 
-  private apiUrl = 'http://192.168.1.37:3000/api/trabajos';
+  private apiUrl = 'http://localhost:3000/api/trabajos';
 
   constructor(private http: HttpClient) {}
 
