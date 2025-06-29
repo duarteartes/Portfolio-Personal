@@ -1,5 +1,6 @@
 .detalles-container {
     width: 70%;
+    max-width: 1000px;
     height: 600px;
     border: 10px solid black;
     margin: 20px auto;
